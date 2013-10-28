@@ -3,6 +3,9 @@
 
 #include "ffmpeg_ruby.h"
 
+typedef struct _audio_internal {
+} ‘audio_internal_t;
+
 // Object Lifetime
 VALUE audio_register_class(VALUE module, VALUE super);
 
