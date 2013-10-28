@@ -9,7 +9,7 @@ static VALUE _klass;
 */
 
 // Free object
-void reader_free(void * opaque) {
+void audio_free(void * opaque) {
 	audio_internal_t * internal = (audio_internal_t *)opaque;
 	if (internal) {
 		av_free(internal);
