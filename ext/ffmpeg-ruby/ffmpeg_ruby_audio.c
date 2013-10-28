@@ -1,5 +1,5 @@
 #include "ffmpeg_ruby.h"
-#include "ffmpeg_audio.h"
+#include "ffmpeg_ruby_audio.h"
 
 // Globals
 static VALUE _klass;
