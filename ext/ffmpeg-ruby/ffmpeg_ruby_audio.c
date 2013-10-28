@@ -10,7 +10,7 @@ static VALUE _klass;
 */
 
 // Register class
-VALUE reader_register_class(VALUE module, VALUE super) {
+VALUE audio_register_class(VALUE module, VALUE super) {
 	_klass = rb_define_class_under(module, "Audio", super);
 	rb_define_alloc_func(_klass, audio_alloc);
 

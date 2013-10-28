@@ -4,6 +4,6 @@
 #include "ffmpeg_ruby.h"
 
 // Object Lifetime
-VALUE reader_register_class(VALUE module, VALUE super);
+VALUE audio_register_class(VALUE module, VALUE super);
 
 #endif // __FFMPEG_RUBY_AUDIO_H__
