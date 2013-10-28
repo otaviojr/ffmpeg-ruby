@@ -10,7 +10,7 @@ static VALUE _klass;
 
 // Allocate object
 VALUE audio_alloc(VALUE klass) {
-	audio_internal_t * internal = (ReaderInternal *)av_mallocz(sizeof(audio_internal_t));
+	audio_internal_t * internal = (audio_internal_t *)av_mallocz(sizeof(audio_internal_t));
 	if (!internal) rb_raise(rb_eNoMemError, "Failed to allocate internal structure");
 
 	return Data_Wrap_Struct(klass, audio_mark, audio_free, (void *)internal);
