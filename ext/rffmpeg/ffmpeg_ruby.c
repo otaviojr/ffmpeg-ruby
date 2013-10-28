@@ -2,6 +2,9 @@
 
 #include "ffmpeg_ruby_audio.h"
 
+// Globals
+static VALUE _klass;
+
 /*
 **	Deinitialize.
 */
@@ -15,7 +18,10 @@ void DeInit_ruby_ffmpeg(VALUE data) {
 void Init_ruby_ffmpeg_ext(void) {
 
 	// FFMPEG
+	avcodec_register_all();
 	av_register_all();
+	avfilter_register_all();
+	
 	av_log_set_level(AV_LOG_QUIET);
 
 	// Ruby
