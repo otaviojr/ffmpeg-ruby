@@ -4,6 +4,7 @@
 #include "ffmpeg_ruby.h"
 
 typedef struct _audio_internal {
+	VALUE io;
 } audio_internal_t;
 
 // Object Lifetime

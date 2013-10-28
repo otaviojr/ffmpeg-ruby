@@ -20,6 +20,7 @@ void audio_free(void * opaque) {
 void audio_mark(void * opaque) {
 	audio_internal_t * internal = (audio_internal_t *)opaque;
 	if (internal) {
+		rb_gc_mark(internal->io);
 	}
 }
 
@@ -35,6 +36,8 @@ VALUE audio_alloc(VALUE klass) {
 VALUE audio_initialize(VALUE self, VALUE io) {
 	audio_internal_t * internal;
 	Data_Get_Struct(self, audio_internal_t, internal);
+	
+	internal->io = io;
 
 	return self;
 }
