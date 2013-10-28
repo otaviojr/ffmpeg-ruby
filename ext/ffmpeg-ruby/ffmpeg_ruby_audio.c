@@ -4,33 +4,9 @@
 // Globals
 static VALUE _klass;
 
-VALUE audio_alloc(VALUE klass);
-
 /*
 **	Object Lifetime.
 */
-
-// Register class
-VALUE audio_register_class(VALUE module, VALUE super) {
-	_klass = rb_define_class_under(module, "Audio", super);
-	rb_define_alloc_func(_klass, audio_alloc);
-
-	//rb_define_const (_klass, "VERSION",			rb_str_new2(human_readable_version()));
-	//rb_define_const (_klass, "CONFIGURATION",	rb_str_new2(avformat_configuration()));
-	//rb_define_const (_klass, "LICENSE",			rb_str_new2(avformat_license()));
-
-	rb_define_method(_klass, "initialize",		audio_initialize, 1);
-
-	//rb_define_method(_klass, "name", 			reader_name, 0);
-	//rb_define_method(_klass, "description", 	reader_description, 0);
-	//rb_define_method(_klass, "start_time", 		reader_start_time, 0);
-	//rb_define_method(_klass, "duration", 		reader_duration, 0);
-	//rb_define_method(_klass, "bit_rate", 		reader_bit_rate, 0);
-	//rb_define_method(_klass, "streams", 		reader_streams, 0);
-	//rb_define_method(_klass, "metadata", 		reader_metadata, 0);
-
-	return _klass;
-}
 
 // Allocate object
 VALUE audio_alloc(VALUE klass) {
@@ -67,3 +43,29 @@ VALUE audio_initialize(VALUE self, VALUE io) {
 /*
 **	Properties.
 */
+
+
+/*
+** Register
+*/
+// Register class
+VALUE audio_register_class(VALUE module, VALUE super) {
+	_klass = rb_define_class_under(module, "Audio", super);
+	rb_define_alloc_func(_klass, audio_alloc);
+
+	//rb_define_const (_klass, "VERSION",			rb_str_new2(human_readable_version()));
+	//rb_define_const (_klass, "CONFIGURATION",	rb_str_new2(avformat_configuration()));
+	//rb_define_const (_klass, "LICENSE",			rb_str_new2(avformat_license()));
+
+	rb_define_method(_klass, "initialize",		audio_initialize, 1);
+
+	//rb_define_method(_klass, "name", 			reader_name, 0);
+	//rb_define_method(_klass, "description", 	reader_description, 0);
+	//rb_define_method(_klass, "start_time", 		reader_start_time, 0);
+	//rb_define_method(_klass, "duration", 		reader_duration, 0);
+	//rb_define_method(_klass, "bit_rate", 		reader_bit_rate, 0);
+	//rb_define_method(_klass, "streams", 		reader_streams, 0);
+	//rb_define_method(_klass, "metadata", 		reader_metadata, 0);
+
+	return _klass;
+}
