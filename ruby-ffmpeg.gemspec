@@ -7,6 +7,6 @@ Gem::Specification.new do |s|
   s.authors     = [ "Otávio Ribeiro" ]
   s.email       = "otavio.ribeiro@gmail.com"
   s.files       = Dir.glob("lib/**/*.rb") + Dir.glob("ext/**/*.{c,h,rb}")
-  s.extensions  = [ "ext/ruby-ffmpeg/extconf.rb" ]
+  s.extensions  = [ "ext/ffmpeg-ruby/extconf.rb" ]
   s.homepage    = "http://github.com/tja/ffmpeg-ruby"
 end
