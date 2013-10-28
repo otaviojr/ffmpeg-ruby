@@ -1,5 +1,5 @@
-#ifndef	RUBY_FFMPEG_H
-#define	RUBY_FFMPEG_H
+#ifndef	__FFMPEG_RUBY_H__
+#define	__FFMPEG_RUBY_H__
 
 // FMPEG
 #include <libavcodec/avcodec.h>
@@ -12,4 +12,4 @@
 // Ruby
 #include <ruby.h>
 
-#endif	// RUBY_FFMPEG_H
+#endif	// __FFMPEG_RUBY_H__

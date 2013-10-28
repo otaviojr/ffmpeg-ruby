@@ -4,6 +4,7 @@
 // Globals
 static VALUE _klass;
 
+VALUE audio_alloc(VALUE klass);
 
 /*
 **	Object Lifetime.
