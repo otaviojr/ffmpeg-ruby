@@ -8,14 +8,6 @@ static VALUE _klass;
 **	Object Lifetime.
 */
 
-// Allocate object
-VALUE audio_alloc(VALUE klass) {
-	audio_internal_t * internal = (audio_internal_t *)av_mallocz(sizeof(audio_internal_t));
-	if (!internal) rb_raise(rb_eNoMemError, "Failed to allocate internal structure");
-
-	return Data_Wrap_Struct(klass, audio_mark, audio_free, (void *)internal);
-}
-
 // Free object
 void reader_free(void * opaque) {
 	audio_internal_t * internal = (audio_internal_t *)opaque;
@@ -29,6 +21,14 @@ void audio_mark(void * opaque) {
 	audio_internal_t * internal = (audio_internal_t *)opaque;
 	if (internal) {
 	}
+}
+
+// Allocate object
+VALUE audio_alloc(VALUE klass) {
+	audio_internal_t * internal = (audio_internal_t *)av_mallocz(sizeof(audio_internal_t));
+	if (!internal) rb_raise(rb_eNoMemError, "Failed to allocate internal structure");
+
+	return Data_Wrap_Struct(klass, audio_mark, audio_free, (void *)internal);
 }
 
 // Initialize object
