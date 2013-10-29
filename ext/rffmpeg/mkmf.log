@@ -1,0 +1,195 @@
+have_library: checking for main() in -lavformat... -------------------- yes
+
+"gcc -o conftest -I/opt/ruby2.0/include/ruby-2.0.0/x86_64-linux -I/opt/ruby2.0/include/ruby-2.0.0/ruby/backward -I/opt/ruby2.0/include/ruby-2.0.0 -I. -I/opt/ruby2.0/include -I/opt/local/include -I/usr/local/include -I/usr/include     -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration conftest.c  -L. -L/opt/ruby2.0/lib -Wl,-R/opt/ruby2.0/lib -L/opt/ruby2.0/lib -Wl,-R/opt/ruby2.0/lib -L/opt/local/lib -Wl,-R/opt/local/lib -L/usr/local/lib -Wl,-R/usr/local/lib -L/usr/lib -Wl,-R/usr/lib -L. -fstack-protector -rdynamic -Wl,-export-dynamic     -Wl,-R -Wl,/opt/ruby2.0/lib -L/opt/ruby2.0/lib -lruby-static  -lpthread -lrt -ldl -lcrypt -lm   -lc"
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: int main(int argc, char **argv)
+4: {
+5:   return 0;
+6: }
+/* end */
+
+"gcc -o conftest -I/opt/ruby2.0/include/ruby-2.0.0/x86_64-linux -I/opt/ruby2.0/include/ruby-2.0.0/ruby/backward -I/opt/ruby2.0/include/ruby-2.0.0 -I. -I/opt/ruby2.0/include -I/opt/local/include -I/usr/local/include -I/usr/include     -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration conftest.c  -L. -L/opt/ruby2.0/lib -Wl,-R/opt/ruby2.0/lib -L/opt/ruby2.0/lib -Wl,-R/opt/ruby2.0/lib -L/opt/local/lib -Wl,-R/opt/local/lib -L/usr/local/lib -Wl,-R/usr/local/lib -L/usr/lib -Wl,-R/usr/lib -L. -fstack-protector -rdynamic -Wl,-export-dynamic     -Wl,-R -Wl,/opt/ruby2.0/lib -L/opt/ruby2.0/lib -lruby-static -lavformat  -lpthread -lrt -ldl -lcrypt -lm   -lc"
+conftest.c: In function ‘t’:
+conftest.c:5:57: error: ‘main’ undeclared (first use in this function)
+conftest.c:5:57: note: each undeclared identifier is reported only once for each function it appears in
+conftest.c:5:32: warning: variable ‘p’ set but not used [-Wunused-but-set-variable]
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int t(void) { void ((*volatile p)()); p = (void ((*)()))main; return 0; }
+ 6: int main(int argc, char **argv)
+ 7: {
+ 8:   if (argc > 1000000) {
+ 9:     printf("%p", &t);
+10:   }
+11: 
+12:   return 0;
+13: }
+/* end */
+
+"gcc -o conftest -I/opt/ruby2.0/include/ruby-2.0.0/x86_64-linux -I/opt/ruby2.0/include/ruby-2.0.0/ruby/backward -I/opt/ruby2.0/include/ruby-2.0.0 -I. -I/opt/ruby2.0/include -I/opt/local/include -I/usr/local/include -I/usr/include     -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration conftest.c  -L. -L/opt/ruby2.0/lib -Wl,-R/opt/ruby2.0/lib -L/opt/ruby2.0/lib -Wl,-R/opt/ruby2.0/lib -L/opt/local/lib -Wl,-R/opt/local/lib -L/usr/local/lib -Wl,-R/usr/local/lib -L/usr/lib -Wl,-R/usr/lib -L. -fstack-protector -rdynamic -Wl,-export-dynamic     -Wl,-R -Wl,/opt/ruby2.0/lib -L/opt/ruby2.0/lib -lruby-static -lavformat  -lpthread -lrt -ldl -lcrypt -lm   -lc"
+conftest.c: In function ‘t’:
+conftest.c:5:1: warning: implicit declaration of function ‘main’ [-Wimplicit-function-declaration]
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int t(void) { main(); return 0; }
+ 6: int main(int argc, char **argv)
+ 7: {
+ 8:   if (argc > 1000000) {
+ 9:     printf("%p", &t);
+10:   }
+11: 
+12:   return 0;
+13: }
+/* end */
+
+--------------------
+
+have_library: checking for main() in -lavcodec... -------------------- yes
+
+"gcc -o conftest -I/opt/ruby2.0/include/ruby-2.0.0/x86_64-linux -I/opt/ruby2.0/include/ruby-2.0.0/ruby/backward -I/opt/ruby2.0/include/ruby-2.0.0 -I. -I/opt/ruby2.0/include -I/opt/local/include -I/usr/local/include -I/usr/include     -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration conftest.c  -L. -L/opt/ruby2.0/lib -Wl,-R/opt/ruby2.0/lib -L/opt/ruby2.0/lib -Wl,-R/opt/ruby2.0/lib -L/opt/local/lib -Wl,-R/opt/local/lib -L/usr/local/lib -Wl,-R/usr/local/lib -L/usr/lib -Wl,-R/usr/lib -L. -fstack-protector -rdynamic -Wl,-export-dynamic    -lavformat  -Wl,-R -Wl,/opt/ruby2.0/lib -L/opt/ruby2.0/lib -lruby-static -lavcodec -lavformat  -lpthread -lrt -ldl -lcrypt -lm   -lc"
+conftest.c: In function ‘t’:
+conftest.c:5:57: error: ‘main’ undeclared (first use in this function)
+conftest.c:5:57: note: each undeclared identifier is reported only once for each function it appears in
+conftest.c:5:32: warning: variable ‘p’ set but not used [-Wunused-but-set-variable]
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int t(void) { void ((*volatile p)()); p = (void ((*)()))main; return 0; }
+ 6: int main(int argc, char **argv)
+ 7: {
+ 8:   if (argc > 1000000) {
+ 9:     printf("%p", &t);
+10:   }
+11: 
+12:   return 0;
+13: }
+/* end */
+
+"gcc -o conftest -I/opt/ruby2.0/include/ruby-2.0.0/x86_64-linux -I/opt/ruby2.0/include/ruby-2.0.0/ruby/backward -I/opt/ruby2.0/include/ruby-2.0.0 -I. -I/opt/ruby2.0/include -I/opt/local/include -I/usr/local/include -I/usr/include     -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration conftest.c  -L. -L/opt/ruby2.0/lib -Wl,-R/opt/ruby2.0/lib -L/opt/ruby2.0/lib -Wl,-R/opt/ruby2.0/lib -L/opt/local/lib -Wl,-R/opt/local/lib -L/usr/local/lib -Wl,-R/usr/local/lib -L/usr/lib -Wl,-R/usr/lib -L. -fstack-protector -rdynamic -Wl,-export-dynamic    -lavformat  -Wl,-R -Wl,/opt/ruby2.0/lib -L/opt/ruby2.0/lib -lruby-static -lavcodec -lavformat  -lpthread -lrt -ldl -lcrypt -lm   -lc"
+conftest.c: In function ‘t’:
+conftest.c:5:1: warning: implicit declaration of function ‘main’ [-Wimplicit-function-declaration]
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int t(void) { main(); return 0; }
+ 6: int main(int argc, char **argv)
+ 7: {
+ 8:   if (argc > 1000000) {
+ 9:     printf("%p", &t);
+10:   }
+11: 
+12:   return 0;
+13: }
+/* end */
+
+--------------------
+
+have_library: checking for main() in -lavutil... -------------------- yes
+
+"gcc -o conftest -I/opt/ruby2.0/include/ruby-2.0.0/x86_64-linux -I/opt/ruby2.0/include/ruby-2.0.0/ruby/backward -I/opt/ruby2.0/include/ruby-2.0.0 -I. -I/opt/ruby2.0/include -I/opt/local/include -I/usr/local/include -I/usr/include     -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration conftest.c  -L. -L/opt/ruby2.0/lib -Wl,-R/opt/ruby2.0/lib -L/opt/ruby2.0/lib -Wl,-R/opt/ruby2.0/lib -L/opt/local/lib -Wl,-R/opt/local/lib -L/usr/local/lib -Wl,-R/usr/local/lib -L/usr/lib -Wl,-R/usr/lib -L. -fstack-protector -rdynamic -Wl,-export-dynamic    -lavcodec -lavformat  -Wl,-R -Wl,/opt/ruby2.0/lib -L/opt/ruby2.0/lib -lruby-static -lavutil -lavcodec -lavformat  -lpthread -lrt -ldl -lcrypt -lm   -lc"
+conftest.c: In function ‘t’:
+conftest.c:5:57: error: ‘main’ undeclared (first use in this function)
+conftest.c:5:57: note: each undeclared identifier is reported only once for each function it appears in
+conftest.c:5:32: warning: variable ‘p’ set but not used [-Wunused-but-set-variable]
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int t(void) { void ((*volatile p)()); p = (void ((*)()))main; return 0; }
+ 6: int main(int argc, char **argv)
+ 7: {
+ 8:   if (argc > 1000000) {
+ 9:     printf("%p", &t);
+10:   }
+11: 
+12:   return 0;
+13: }
+/* end */
+
+"gcc -o conftest -I/opt/ruby2.0/include/ruby-2.0.0/x86_64-linux -I/opt/ruby2.0/include/ruby-2.0.0/ruby/backward -I/opt/ruby2.0/include/ruby-2.0.0 -I. -I/opt/ruby2.0/include -I/opt/local/include -I/usr/local/include -I/usr/include     -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration conftest.c  -L. -L/opt/ruby2.0/lib -Wl,-R/opt/ruby2.0/lib -L/opt/ruby2.0/lib -Wl,-R/opt/ruby2.0/lib -L/opt/local/lib -Wl,-R/opt/local/lib -L/usr/local/lib -Wl,-R/usr/local/lib -L/usr/lib -Wl,-R/usr/lib -L. -fstack-protector -rdynamic -Wl,-export-dynamic    -lavcodec -lavformat  -Wl,-R -Wl,/opt/ruby2.0/lib -L/opt/ruby2.0/lib -lruby-static -lavutil -lavcodec -lavformat  -lpthread -lrt -ldl -lcrypt -lm   -lc"
+conftest.c: In function ‘t’:
+conftest.c:5:1: warning: implicit declaration of function ‘main’ [-Wimplicit-function-declaration]
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int t(void) { main(); return 0; }
+ 6: int main(int argc, char **argv)
+ 7: {
+ 8:   if (argc > 1000000) {
+ 9:     printf("%p", &t);
+10:   }
+11: 
+12:   return 0;
+13: }
+/* end */
+
+--------------------
+
+have_library: checking for main() in -lswscale... -------------------- yes
+
+"gcc -o conftest -I/opt/ruby2.0/include/ruby-2.0.0/x86_64-linux -I/opt/ruby2.0/include/ruby-2.0.0/ruby/backward -I/opt/ruby2.0/include/ruby-2.0.0 -I. -I/opt/ruby2.0/include -I/opt/local/include -I/usr/local/include -I/usr/include     -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration conftest.c  -L. -L/opt/ruby2.0/lib -Wl,-R/opt/ruby2.0/lib -L/opt/ruby2.0/lib -Wl,-R/opt/ruby2.0/lib -L/opt/local/lib -Wl,-R/opt/local/lib -L/usr/local/lib -Wl,-R/usr/local/lib -L/usr/lib -Wl,-R/usr/lib -L. -fstack-protector -rdynamic -Wl,-export-dynamic    -lavutil -lavcodec -lavformat  -Wl,-R -Wl,/opt/ruby2.0/lib -L/opt/ruby2.0/lib -lruby-static -lswscale -lavutil -lavcodec -lavformat  -lpthread -lrt -ldl -lcrypt -lm   -lc"
+conftest.c: In function ‘t’:
+conftest.c:5:57: error: ‘main’ undeclared (first use in this function)
+conftest.c:5:57: note: each undeclared identifier is reported only once for each function it appears in
+conftest.c:5:32: warning: variable ‘p’ set but not used [-Wunused-but-set-variable]
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int t(void) { void ((*volatile p)()); p = (void ((*)()))main; return 0; }
+ 6: int main(int argc, char **argv)
+ 7: {
+ 8:   if (argc > 1000000) {
+ 9:     printf("%p", &t);
+10:   }
+11: 
+12:   return 0;
+13: }
+/* end */
+
+"gcc -o conftest -I/opt/ruby2.0/include/ruby-2.0.0/x86_64-linux -I/opt/ruby2.0/include/ruby-2.0.0/ruby/backward -I/opt/ruby2.0/include/ruby-2.0.0 -I. -I/opt/ruby2.0/include -I/opt/local/include -I/usr/local/include -I/usr/include     -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration conftest.c  -L. -L/opt/ruby2.0/lib -Wl,-R/opt/ruby2.0/lib -L/opt/ruby2.0/lib -Wl,-R/opt/ruby2.0/lib -L/opt/local/lib -Wl,-R/opt/local/lib -L/usr/local/lib -Wl,-R/usr/local/lib -L/usr/lib -Wl,-R/usr/lib -L. -fstack-protector -rdynamic -Wl,-export-dynamic    -lavutil -lavcodec -lavformat  -Wl,-R -Wl,/opt/ruby2.0/lib -L/opt/ruby2.0/lib -lruby-static -lswscale -lavutil -lavcodec -lavformat  -lpthread -lrt -ldl -lcrypt -lm   -lc"
+conftest.c: In function ‘t’:
+conftest.c:5:1: warning: implicit declaration of function ‘main’ [-Wimplicit-function-declaration]
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int t(void) { main(); return 0; }
+ 6: int main(int argc, char **argv)
+ 7: {
+ 8:   if (argc > 1000000) {
+ 9:     printf("%p", &t);
+10:   }
+11: 
+12:   return 0;
+13: }
+/* end */
+
+--------------------
+
